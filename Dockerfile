@@ -34,5 +34,5 @@ RUN service postgresql start                                 && \
     echo "from data.v2.build import build_all; build_all(); quit()" | python -u manage.py shell --settings=config.docker
 
 # Expose the app and serve the API.
-EXPOSE 8000
-CMD service postgresql start && service redis-server start && python manage.py runserver --settings=config.docker 0.0.0.0:8000
+EXPOSE 80
+CMD service postgresql start && service redis-server start && python manage.py runserver --settings=config.docker 0.0.0.0:80
